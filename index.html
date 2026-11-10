@@ -1,187 +1,325 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sally Jiang's Portfolio</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-    color: #2d2d2d; background: #fdfdfb; line-height: 1.75;
-  }
-  nav {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(253,253,251,.95); border-bottom: 1px solid #e8e4dc;
-    padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;
-  }
-  nav .brand { font-weight: 700; font-size: 18px; letter-spacing: .5px; }
-  nav .links a { margin-left: 22px; text-decoration: none; color: #5a5a5a; font-size: 15px; }
-  nav .links a:hover { color: #b5651d; }
-  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-  header.hero { text-align: center; padding: 72px 24px 48px; }
-  header.hero h1 { font-size: 42px; letter-spacing: 1px; margin-bottom: 10px; }
-  header.hero .tagline { font-size: 18px; color: #6b6b6b; max-width: 640px; margin: 0 auto 28px; }
-  .btn {
-    display: inline-block; margin: 6px; padding: 10px 26px; border-radius: 999px;
-    border: 1px solid #b5651d; color: #b5651d; text-decoration: none; font-size: 15px;
-  }
-  .btn.solid { background: #b5651d; color: #fff; }
-  .btn:hover { opacity: .85; }
-  section { padding: 40px 0; border-top: 1px solid #e8e4dc; }
-  section h2 { font-size: 28px; margin-bottom: 24px; letter-spacing: .5px; }
-  section h2 .cn { font-size: 16px; color: #999; font-weight: 400; margin-left: 10px; }
-  h3 { font-size: 19px; margin: 26px 0 6px; }
-  .meta { color: #8a8a8a; font-size: 14px; margin-bottom: 10px; }
-  ul { padding-left: 22px; margin: 8px 0 16px; }
-  li { margin-bottom: 8px; }
-  .photo {
-    border: 2px dashed #c9c2b4; border-radius: 10px; background: #f7f4ee;
-    color: #a09a8c; text-align: center; padding: 46px 20px; margin: 18px 0; font-size: 14px;
-  }
-  .todo {
-    background: #fff3d6; border: 1px dashed #d9a91e; border-radius: 6px;
-    padding: 2px 8px; font-size: 13px; color: #8a6d00;
-  }
-  .project-card {
-    border: 1px solid #e8e4dc; border-radius: 12px; padding: 22px; margin: 18px 0; background: #fff;
-  }
-  .project-card h3 { margin-top: 0; }
-  .project-card .kw { font-size: 13px; color: #b5651d; margin-bottom: 8px; }
-  footer { text-align: center; padding: 48px 24px 64px; color: #999; font-size: 14px; border-top: 1px solid #e8e4dc; }
-  footer a { color: #b5651d; text-decoration: none; margin: 0 10px; }
-  a { color: #b5651d; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sally Jiang — Data Scientist</title>
+<meta name="description" content="Sally Jiang is a Seattle-based data scientist working on experimentation, causal inference, and applied AI. Formerly TikTok Shop; now at UW Foster.">
+<meta property="og:title" content="Sally Jiang — Data Scientist">
+<meta property="og:description" content="Experimentation, causal inference, and applied AI. Formerly TikTok Shop; now at UW Foster.">
+<meta property="og:image" content="img/sally.jpg">
+<link rel="preload" as="image" href="img/hero-back.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2334506b'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-style='italic' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <div class="brand">Sally Jiang</div>
-  <div class="links">
-    <a href="#work">Work</a>
-    <a href="#education">Education</a>
-    <a href="#life">Life</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<div class="wrap">
-
-<header class="hero">
-  <h1>Sally Jiang</h1>
-  <p class="tagline">Data Scientist · 5 years at ByteDance / TikTok across experimentation platforms, causal inference &amp; product analytics · Now completing my MSIS at UW Foster</p>
-  <div class="photo">Photo: portrait / professional headshot <span class="todo">TODO: 发我一张照片</span></div>
-  <a class="btn solid" href="#work">View My Work</a>
-  <a class="btn" href="#contact">Get in Touch</a>
+<header class="topbar" id="topbar">
+  <a class="brand" href="#top">Sally Jiang</a>
+  <nav aria-label="Primary">
+    <a class="opt" href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a class="opt" href="#journey">Journey</a>
+    <a href="life.html">Life</a>
+    <a class="opt" href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section id="work">
-  <h2>Work <span class="cn">职业经历</span></h2>
-
-  <h3>ByteDance / TikTok | Data Scientist</h3>
-  <div class="meta"><span class="todo">TODO: 年份，如 2020 – 2025</span> · Beijing / Seattle <span class="todo">TODO: 确认城市</span></div>
-  <ul>
-    <li>Built and scaled experimentation platforms supporting product decision-making across <span class="todo">TODO: 规模，如 "X teams / N experiments per quarter"</span>.</li>
-    <li>Applied causal inference methods to measure product impact and guide launch decisions, improving <span class="todo">TODO: 量化结果</span>.</li>
-    <li>Partnered with product and engineering on analytics for <span class="todo">TODO: 业务线</span>, translating ambiguous business questions into rigorous analyses.</li>
-    <li>Brought LLM tooling into data science workflows, cutting <span class="todo">TODO: 效率提升，如 "analysis turnaround time by X%"</span>.</li>
-  </ul>
-
-  <h3>Human-AI Operations Lab, UW Foster | Research Contributor</h3>
-  <div class="meta">2026 – Present</div>
-  <ul>
-    <li>Research on vibe coding and organizational adoption of generative AI — how executives' influence shapes AI uptake in organizations.</li>
-    <li>Bridging industry practice and academic research, drawing on five years of industry experience. <span class="todo">TODO: 做出具体贡献后补充</span></li>
-  </ul>
-
-  <h3 style="margin-top:36px;">Selected Projects</h3>
-
-  <div class="project-card">
-    <h3>The Cutover · 双语读书 App</h3>
-    <div class="kw">Side Project · Bilingual · Web App</div>
-    <p>A bilingual reading companion for Tayfun Keskin's novel <em>The Cutover</em> (MSIS 524 course reading): 14 chapter cards with Chinese + English summaries, 17 character quick-read cards, a 7-beat plot timeline, 6 bilingual themes — plus the full original text embedded with a reading-size control.</p>
-    <p><span class="todo">TODO: 上线后放链接 / 嵌入</span></p>
+<div class="hero-scroll" id="top">
+  <div class="hero-stage" id="stage">
+    <div class="blur" style="background-image:url('img/hero-blur.jpg')"></div>
+    <div class="shot"><img src="img/hero-back.jpg" alt="Sally seen from behind, sitting on a rocky ledge above a turquoise lake and a forested valley"></div>
+    <div class="hero-inner">
+      <p class="kicker">Seattle, Washington</p>
+      <h1>Sally Jiang</h1>
+      <div class="rule"></div>
+      <p class="tagline">A data scientist thinking with AI.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/shan-jiang-uw4593/">LinkedIn</a>
+        <a href="https://github.com/Sally615">GitHub</a>
+        <a href="mailto:sjiang39@uw.edu">Email</a>
+      </div>
+      <nav class="boxnav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="life.html">Life</a>
+      </nav>
+    </div>
+    <div class="cue">Scroll</div>
   </div>
-
-  <div class="project-card">
-    <h3><span class="todo">TODO: 项目 2，如实验平台代表作（脱敏）</span></h3>
-    <div class="kw">When / Why / What / How / Metrics</div>
-    <p><span class="todo">TODO: 按 When → Why → What → How → Metrics 结构填写</span></p>
-  </div>
-
-  <div class="project-card">
-    <h3><span class="todo">TODO: 项目 3，如因果推断 / 产品分析代表作</span></h3>
-    <div class="kw">When / Why / What / How / Metrics</div>
-    <p><span class="todo">TODO: 按 When → Why → What → How → Metrics 结构填写</span></p>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education <span class="cn">教育背景</span></h2>
-
-  <h3>University of Washington, Foster School of Business</h3>
-  <div class="meta">M.S. in Information Systems · Jun 2026 – Mar 2027 (expected) · Seattle, WA</div>
-  <ul>
-    <li>Coursework: MSIS 524 (Prof. Tayfun Keskin), MSIS 512 (Prof. Stephanie Lee), MSIS 521 <span class="todo">TODO: 补充/修正课程</span></li>
-    <li>GPSS Senator for the Foster Specialty Masters program — elected Oct 2026, exploring how university governance works.</li>
-  </ul>
-
-  <h3>University of Delaware</h3>
-  <div class="meta">Bachelor's · Class of 2020 <span class="todo">TODO: 专业、GPA、亮点</span></div>
-
-  <h3>UW Biostatistics (Master's, incomplete)</h3>
-  <div class="meta">Began a master's in Biostatistics; left when the pandemic moved classes remote — to join ByteDance.</div>
-</section>
-
-<section id="life">
-  <h2>Living My Best Life <span class="cn">生活</span></h2>
-
-  <div class="photo">Photo: swimming / competition <span class="todo">TODO: 发我照片</span></div>
-  <h3>Swimming</h3>
-  <p>National Level-2 competitive swimmer. <span class="todo">TODO: 2–3 句故事，如主项、难忘的比赛</span></p>
-
-  <div class="photo">Photo: yoga <span class="todo">TODO: 发我照片</span></div>
-  <h3>Yoga</h3>
-  <p>Five years of practice and counting. <span class="todo">TODO: 有没有教过课/考过证？2–3 句</span></p>
-
-  <div class="photo">Photo: skiing <span class="todo">TODO: 发我照片</span></div>
-  <h3>Skiing</h3>
-  <p><span class="todo">TODO: 雪场、水平、趣事，2–3 句</span></p>
-
-  <h3>Golf — the newest obsession</h3>
-  <p>Picked up golf in October 2026. First club: a used Precise Hi Launch women's 8-iron ($15, second-hand shop find). Practicing at Willows Run's covered, heated bays — very beginner, very happy about it.</p>
-
-  <h3>Tarot &amp; Bazi</h3>
-  <p>Into tarot spreads and Chinese bazi (八字) — the systems kind of person, on and off the clock. <span class="todo">TODO: 想写多深？告诉我</span></p>
-
-  <h3>Stargazing</h3>
-  <p>Saw the Little Dipper and the Big Dipper while stargazing in Maui — and now I want to learn which constellations are visible when, and how to find them.</p>
-
-  <h3>Currently reading</h3>
-  <p><em>The Cutover</em> by Tayfun Keskin — which is also why the reading app above exists.</p>
-
-  <div class="photo">Photo: hiking / travel / tacos <span class="todo">TODO: 发我照片</span></div>
-  <h3>And the rest</h3>
-  <p><span class="todo">TODO: 徒步、旅行、DJ 梦……2–4 句，轻松语气</span></p>
-</section>
-
-<section id="contact">
-  <h2>Contact <span class="cn">联系我</span></h2>
-  <p>I'm based in Seattle, WA and open to full-time Data Scientist roles starting March 2027.</p>
-  <ul>
-    <li>Email (job search): kosakura.shan@gmail.com</li>
-    <li>Email (academic): sjiang39@uw.edu</li>
-    <li>LinkedIn: <span class="todo">TODO: 链接</span></li>
-    <li>GitHub: <span class="todo">TODO: 链接</span></li>
-  </ul>
-</section>
-
 </div>
 
+<main>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">01 — About</p>
+      <h2>The road less traveled</h2>
+    </div>
+    <div class="about">
+      <div class="portrait reveal">
+        <img src="img/sally.jpg" alt="Portrait of Sally Jiang" width="900" height="1125">
+      </div>
+      <div class="body reveal">
+        <p class="role">Data Scientist · Experimentation · Causal Inference · Applied AI</p>
+        <p class="lede">Hi, this is Sally. I grew up in Nanjing, China, and I’m now based in Seattle.</p>
+        <p>If I had to describe my twenty-something years so far, I’d borrow a book title: <em>The Road Less Traveled</em>. Arriving at Foster in 2026 was not the conventional route.</p>
+        <p>It began at a high school Model UN conference at the University of Chicago, where I fell for the American classroom. After one year at SWUFE in China, I transferred to the University of Delaware. That China–U.S. mix is in my DNA.</p>
+        <p>In 2020 I went straight from Delaware into UW’s Biostatistics master’s program. Then the pandemic came, and I realized Zoom classes weren’t what I needed. I wanted to be hardened by real industry work, so I left the program and joined ByteDance, where I spent more than five years as a data scientist across Lark, Toutiao, and TikTok Shop.</p>
+        <p>Now I’m back at UW, finishing the master’s I put on hold five years ago. Foster is asking what stays human in the age of AI, which is the question I’ve been exploring all along.</p>
+        <p><em>To be continued.</em></p>
+        <ul class="tags" aria-label="Focus areas">
+          <li>A/B experimentation</li>
+          <li>Experiment governance</li>
+          <li>Causal inference</li>
+          <li>Product analytics</li>
+          <li>LLM applications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">02 — Projects</p>
+      <h2>Selected work</h2>
+    </div>
+
+    <article class="project reveal">
+      <div class="num">01</div>
+      <div>
+        <p class="area">Experiment platform · Governance</p>
+        <h3>Catching harmful experiments before they cost real money</h3>
+        <p><b>The problem.</b> In e-commerce, every experiment touches revenue. With hundreds of tests live at once, a losing variant could keep running at high traffic long before anyone stepped in, and the platform had no way to stop it.</p>
+        <ul class="how">
+          <li>Set tiered alerts on GMV per user: a significant drop pages the experiment owner, a severe one goes straight to leadership.</li>
+          <li>Added a ramp-up gate, so a test only moves from small to full traffic when core metrics show no harm.</li>
+          <li>Introduced Launch Review, so no feature ships by trading away core metrics or another team’s module.</li>
+        </ul>
+        <p class="meth">Started in the U.S., then rolled out to Europe and Southeast Asia as the standard for TikTok Global E-Commerce.</p>
+      </div>
+      <aside>
+        <div class="stat"><b>200+</b><span>harmful experiments stopped each quarter</span></div>
+        <div class="stat"><b>$10M+</b><span>GMV loss avoided each quarter</span></div>
+        <div class="stat"><b>30+</b><span>platform features designed and launched</span></div>
+      </aside>
+    </article>
+
+    <article class="project reveal">
+      <div class="num">02</div>
+      <div>
+        <p class="area">Product analytics · Machine learning</p>
+        <h3>Finding what actually makes shoppers buy</h3>
+        <p><b>The problem.</b> The product detail page is the front door of the purchase funnel, yet each of its modules was judged by its own isolated A/B test. Nobody had a view of the whole page.</p>
+        <ul class="how">
+          <li>Trained a CatBoost model on product attributes to rank what drives conversion from page view to order.</li>
+          <li>Distilled the result into a three-tier framework: promotions, sales volume, and price lead; shipping, benefits, and reviews follow; delivery time and content depth come third.</li>
+          <li>Turned the findings into a page-structure roadmap with product and design, and into a listing-quality score that guides sellers.</li>
+        </ul>
+        <p class="meth">Methods: CatBoost classification, feature importance, funnel and conversion analysis.</p>
+      </div>
+      <aside>
+        <div class="stat"><b>20+</b><span>feature launches shipped from the roadmap, with measurable click-to-order gains</span></div>
+        <div class="stat"><b>3 tiers</b><span>of conversion drivers, now reused in page redesigns</span></div>
+      </aside>
+    </article>
+
+    <article class="project reveal">
+      <div class="num">03</div>
+      <div>
+        <p class="area">Applied AI · LLM tooling</p>
+        <h3>From experiment results to shared knowledge</h3>
+        <p><b>The problem.</b> Summarizing dozens of concurrent experiments took days, and much of the team’s know-how lived only in people’s heads.</p>
+        <ul class="how">
+          <li>Built an LLM pipeline on the Claude API that synthesizes results across experiments into one readable summary. It spread well beyond my own team.</li>
+          <li>Prototyped a team knowledge base: structured, cross-linked Markdown notes in Obsidian that an LLM organizes and reasons over, covering methodology, past analyses, and institutional memory.</li>
+        </ul>
+        <p class="meth">When a process doesn’t scale, I build the infrastructure to fix it. LLMs are the newest tool for that.</p>
+      </div>
+      <aside>
+        <div class="stat"><b>Days → hours</b><span>data science reporting time</span></div>
+      </aside>
+    </article>
+
+    <article class="project reveal">
+      <div class="num">04</div>
+      <div>
+        <p class="area">Experiment design · Holdouts</p>
+        <h3>Measuring what thirty launches really add up to</h3>
+        <p><b>The problem.</b> The team shipped dozens of features a quarter, each tested alone. But lifts don’t simply add up: some features compound, others cancel each other out.</p>
+        <ul class="how">
+          <li>Proposed the first container (holdout) experiments on the user product side and co-designed “Domains” with the platform team, so a clean holdout group can coexist with every ongoing A/B test.</li>
+          <li>Created a seed-finder to keep small holdout samples balanced, and stacked reversal parameters so the holdout mirrors each new launch.</li>
+          <li>Brought the winner’s-curse correction from Airbnb’s KDD 2018 paper into the platform as a standard feature.</li>
+        </ul>
+        <p class="meth">Now the standard way data science teams across TikTok Shop measure combined feature impact.</p>
+      </div>
+      <aside>
+        <div class="stat"><b>First</b><span>holdout framework on the user product side</span></div>
+        <div class="stat"><b>300+</b><span>data scientists in the session where I presented it</span></div>
+      </aside>
+    </article>
+
+    <article class="project reveal">
+      <div class="num">05</div>
+      <div>
+        <p class="area">Causal inference · Personalization</p>
+        <h3>One page doesn’t fit every shopper</h3>
+        <p><b>The problem.</b> Every shopper saw the same product page, whether they wandered in from a video or searched with a clear goal.</p>
+        <ul class="how">
+          <li>Used causal forests to estimate how each module’s effect varies by how a shopper arrived.</li>
+          <li>Found that feed shoppers respond to social proof and creator content, while search shoppers want price, specs, and shipping.</li>
+          <li>The finding led to “See It in Action,” a creator video module on the product page.</li>
+        </ul>
+        <p class="meth">Methods: heterogeneous treatment effects, Generalized Random Forests.</p>
+      </div>
+      <aside>
+        <div class="stat"><b>+1.3%</b><span>GMV, statistically significant</span></div>
+      </aside>
+    </article>
+
+    <p class="note">All projects are from my time at TikTok Global E-Commerce, 2023–2026.</p>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">03 — Journey</p>
+      <h2>Work &amp; education</h2>
+    </div>
+    <div class="journey">
+      <div class="reveal">
+        <h3 class="col">Work</h3>
+        <ol class="timeline">
+          <li>
+            <time>Dec 2023 – Jun 2026</time>
+            <h4>TikTok · Global E-Commerce</h4>
+            <p class="sub">Data Scientist, Core User Experience</p>
+            <p>Owned all data work for the product detail page, partnering with 5 product managers and 20+ engineers, and led A/B testing standardization for the organization. Named a TikTok Shop Value Creation Star in 2025.</p>
+          </li>
+          <li>
+            <time>Feb 2022 – Dec 2023</time>
+            <h4>ByteDance · Toutiao</h4>
+            <p class="sub">Data Scientist, Video &amp; Livestream Recommendation</p>
+            <p>Built city-level audience preference labels for 20+ cities and turned “label, filter, distribute” into a standard workflow, lifting video views by over 1%. Designed an early-warning system for unusual metric swings.</p>
+          </li>
+          <li>
+            <time>Dec 2020 – Jan 2022</time>
+            <h4>ByteDance · Lark</h4>
+            <p class="sub">Data Scientist, OKR Product</p>
+            <p>Showed that leaders who used @-mentions reached higher OKR alignment, which made the feature a core part of the product. Identified 200+ high-potential free accounts for a follow-up program that became a top-two conversion channel.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <h3 class="col">Education</h3>
+        <ol class="timeline">
+          <li class="now">
+            <time>2026 – 2027, expected</time>
+            <h4>University of Washington</h4>
+            <p class="sub">MS in Information Systems, Foster School of Business</p>
+            <p>Senator, Graduate &amp; Professional Student Senate.</p>
+          </li>
+          <li>
+            <time>Jan 2020</time>
+            <h4>University of Delaware</h4>
+            <p class="sub">BS in Statistics &amp; Finance, minor in Economics</p>
+            <p>Cum laude. Dean’s List every semester.</p>
+          </li>
+          <li>
+            <time>Jun 2019</time>
+            <h4>Southwestern University of Finance and Economics</h4>
+            <p class="sub">BS in Economic Statistics</p>
+            <p>Outstanding undergraduate thesis on transfer learning for consumer lending.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="skills reveal">
+      <div>
+        <h4>Data science</h4>
+        <p>SQL (Hive), Python, A/B experiment design and governance, statistical modeling, machine learning, causal inference.</p>
+      </div>
+      <div>
+        <h4>Product analytics</h4>
+        <p>Metric design and event tracking, funnel and conversion analysis, north-star metric definition.</p>
+      </div>
+      <div>
+        <h4>AI</h4>
+        <p>LLM application development with the Claude API, AI-assisted analytics workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFE TEASER ============ -->
+<section id="life" class="tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">04 — Life</p>
+      <h2>Outside of work</h2>
+    </div>
+    <div class="teaser reveal">
+      <a href="life.html"><img src="img/lake.jpg" alt="Sally on a trail above a blue mountain lake" loading="lazy"></a>
+      <a href="life.html"><img src="img/sydney-harbour.jpg" alt="Sally in a wooden shelter looking across Sydney Harbour" loading="lazy"></a>
+      <a href="life.html"><img src="img/toast.jpg" alt="Thick toast and coffee in a Japanese kissaten" loading="lazy"></a>
+      <a href="life.html"><img src="img/pool.jpg" alt="An indoor lap pool with fins and a kickboard on the deck" loading="lazy"></a>
+    </div>
+    <p class="lede reveal" style="max-width:640px">A swimmer since nine, a pipa player since childhood, a slow but stubborn tennis beginner, and half a citizen of the Southern Hemisphere.</p>
+    <p class="reveal" style="margin-top:28px"><a class="btn" href="life.html">See my life &nbsp;→</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">05 — Contact</p>
+    <h2>Happy to connect!</h2>
+    <p>I’m always glad to hear from people working on experimentation, causal inference, or applied AI, whether you’re hiring, researching, or just curious.</p>
+    <div class="links">
+      <a href="mailto:sjiang39@uw.edu">sjiang39@uw.edu</a>
+      <a href="https://www.linkedin.com/in/shan-jiang-uw4593/">LinkedIn</a>
+      <a href="https://github.com/Sally615">GitHub</a>
+    </div>
+  </div>
+</section>
 <footer>
-  Seattle, Washington · 2026<br>
-  Built with vibe coding — designed by Sally, coded by her AI assistant.
+  <div class="wrap"><span>© 2026 Sally Jiang · Seattle</span><a href="#top">Back to top ↑</a></div>
 </footer>
 
+<script>
+(function () {
+  var bar = document.getElementById('topbar');
+  var stage = document.getElementById('stage'), wrap = document.getElementById('top');
+  function onScroll() {
+    var vh = window.innerHeight, span = wrap.offsetHeight - vh;
+    var p = span > 10 ? Math.min(1, Math.max(0, window.scrollY / span)) : 0;
+    stage.style.setProperty('--p', p.toFixed(4));
+    bar.classList.toggle('solid', window.scrollY > wrap.offsetHeight - 70);
+  }
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
 </body>
 </html>
