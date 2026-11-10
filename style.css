@@ -277,6 +277,8 @@ h2 {
   padding: 14px 26px; border: 1px solid rgba(255,255,255,.5); margin: 0 -1px -1px 0; transition: background .25s, color .25s;
 }
 .contact .links a:hover { background: #fff; color: var(--night); }
+.contact .links.icons a { flex: 0 0 auto; width: 56px; height: 56px; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+.contact .links.icons a svg { width: 22px; height: 22px; display: block; }
 footer { background: var(--night); color: #8a9199; font-size: 13px; letter-spacing: .08em; padding: 26px 0 34px; border-top: 1px solid rgba(255,255,255,.1); }
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 footer a { color: inherit; }
