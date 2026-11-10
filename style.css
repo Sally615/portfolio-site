@@ -306,6 +306,7 @@ footer a { color: inherit; }
 .twocol h3 { font-size: 27px; font-weight: 600; line-height: 1.25; margin-bottom: 16px; }
 figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 8px; line-height: 1.4; }
 .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 56px; }
+.strip.four { grid-template-columns: repeat(4, 1fr); }
 .strip img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
 .shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
@@ -369,4 +370,5 @@ figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 8px; line-heigh
   .contact .links a { flex: 1 1 100%; }
   .strip { grid-template-columns: 1fr 1fr; }
   .strip img:last-child { display: none; }
+  .strip.four img:last-child { display: block; }
 }
